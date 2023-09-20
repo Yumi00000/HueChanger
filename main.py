@@ -163,59 +163,59 @@ class App(tk.Tk):
         self.ok_button = ttk.Button(self, text="Ok", command=self.change_name)
         self.ok_button.grid(row=9, column=0)
 
-        self.text_bg_label = ttk.Label(self, text="Text bg color")
+        self.text_bg_label = ttk.Label(self, text="Top text color color")
         self.text_bg_label.grid(row=0, column=1)
         self.bg_color_box = tk.Canvas(self, width=20, height=20)
         self.bg_color_box.grid(row=1, column=1)
 
-        self.bg_color_R_label = tk.Label(self, text="Text bg color R:")
+        self.bg_color_R_label = tk.Label(self, text="Top text color R:")
         self.bg_color_R_label.grid(row=2, column=1)
         self.bg_color_R_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                          command=self.rgb_colors_bg)
         self.bg_color_R_scale.set(250)
         self.bg_color_R_scale.grid(row=3, column=1)
 
-        self.bg_color_G_label = tk.Label(self, text="Text bg color G:")
+        self.bg_color_G_label = tk.Label(self, text="Top text color G:")
         self.bg_color_G_label.grid(row=4, column=1)
         self.bg_color_G_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                          command=self.rgb_colors_bg)
         self.bg_color_G_scale.set(250)
         self.bg_color_G_scale.grid(row=5, column=1)
 
-        self.bg_color_B_label = tk.Label(self, text="Text bg color B:")
+        self.bg_color_B_label = tk.Label(self, text="Top text color B:")
         self.bg_color_B_label.grid(row=6, column=1)
         self.bg_color_B_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                          command=self.rgb_colors_bg)
         self.bg_color_B_scale.set(250)
         self.bg_color_B_scale.grid(row=7, column=1)
 
-        self.down_text_color_label = ttk.Label(self, text="Down text color")
+        self.down_text_color_label = ttk.Label(self, text="Bottom text color")
         self.down_text_color_label.grid(row=0, column=2)
         self.down_text_color_box = tk.Canvas(self, width=20, height=20)
         self.down_text_color_box.grid(row=1, column=2)
 
-        self.down_text_color_R_label = tk.Label(self, text="Down text color R:")
+        self.down_text_color_R_label = tk.Label(self, text="Bottom text color R:")
         self.down_text_color_R_label.grid(row=2, column=2)
         self.down_text_color_R_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                                 command=self.rgb_down_text_colors)
         self.down_text_color_R_scale.set(139)
         self.down_text_color_R_scale.grid(row=3, column=2)
 
-        self.down_text_color_G_label = tk.Label(self, text="Down text color G:")
+        self.down_text_color_G_label = tk.Label(self, text="Bottom text color G:")
         self.down_text_color_G_label.grid(row=4, column=2)
         self.down_text_color_G_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                                 command=self.rgb_down_text_colors)
         self.down_text_color_G_scale.set(0)
         self.down_text_color_G_scale.grid(row=5, column=2)
 
-        self.down_text_color_B_label = tk.Label(self, text="Text bg color B:")
+        self.down_text_color_B_label = tk.Label(self, text="Down text color B:")
         self.down_text_color_B_label.grid(row=6, column=2)
         self.down_text_color_B_scale = tk.Scale(self, from_=0, to=250, length=360, orient="horizontal",
                                                 command=self.rgb_down_text_colors)
         self.down_text_color_B_scale.set(0)
         self.down_text_color_B_scale.grid(row=7, column=2)
 
-        self.zero_spec_label = ttk.Label(self, text="Zero spec")
+        self.zero_spec_label = ttk.Label(self, text="Min hues spector:")
         self.zero_spec_label.grid(row=0, column=3)
         self.zero_spec_box = tk.Canvas(self, width=20, height=20)
         self.zero_spec_box.grid(row=1, column=3)
@@ -224,7 +224,7 @@ class App(tk.Tk):
         self.zero_spec_scale.set(HueChanger.zero_spec)
         self.zero_spec_scale.grid(row=2, column=3)
 
-        self.max_spec_label = ttk.Label(self, text="Max spec:")
+        self.max_spec_label = ttk.Label(self, text="Max hues spector:")
         self.max_spec_label.grid(row=3, column=3)
         self.max_spec_box = tk.Canvas(self, width=20, height=20)
         self.max_spec_box.grid(row=4, column=3)
@@ -252,7 +252,7 @@ class App(tk.Tk):
         self.checkbox_bg = tk.Checkbutton(self, text="Add Text", command=self.toggle_add_text)
         self.checkbox_bg.grid(row=8, column=1)
 
-        self.checkbox_text = tk.Checkbutton(self, text="High text color black/white", command=self.high_text_color)
+        self.checkbox_text = tk.Checkbutton(self, text="Top text color black/white", command=self.high_text_color)
         self.checkbox_text.grid(row=9, column=1)
 
         self.start_button = ttk.Button(self, text="Start Variations", command=self.start_process, state=tk.DISABLED)
