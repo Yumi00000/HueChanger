@@ -3,6 +3,94 @@ from tkinter import ttk
 
 
 class WidgetManager:
+    """
+    Manages the setup and configuration of widgets for a graphical user
+    interface (GUI) used in a parent application.
+
+    This class initializes and configures various widgets required for
+    a GUI. It is responsible for setting up elements like buttons,
+    entry fields, labels, scales, checkboxes, and progress bars to allow
+    interaction with the underlying functionalities provided by the parent
+    application, such as selecting files, changing colors, and applying
+    customizable configurations.
+
+    :ivar parent: The parent application that provides context and methods
+        for callbacks.
+    :type parent: Any
+
+    :ivar config: Configuration object holding initialization settings
+        such as color ranges and number of changes.
+    :type config: Any
+
+    :ivar change_name_entry: Entry widget for changing file names.
+    :type change_name_entry: ttk.Entry
+
+    :ivar change_pref_entry: Entry widget for changing file name prefixes.
+    :type change_pref_entry: ttk.Entry
+
+    :ivar change_vers_entry: Entry widget for specifying picture versions.
+    :type change_vers_entry: ttk.Entry
+
+    :ivar bg_color_box: Canvas widget displaying the current background color.
+    :type bg_color_box: tk.Canvas
+
+    :ivar bg_color_R_scale: Scale widget for adjusting the red component
+        of the background color.
+    :type bg_color_R_scale: tk.Scale
+
+    :ivar bg_color_G_scale: Scale widget for adjusting the green component
+        of the background color.
+    :type bg_color_G_scale: tk.Scale
+
+    :ivar bg_color_B_scale: Scale widget for adjusting the blue component
+        of the background color.
+    :type bg_color_B_scale: tk.Scale
+
+    :ivar down_text_color_box: Canvas widget displaying the current bottom
+        text color.
+    :type down_text_color_box: tk.Canvas
+
+    :ivar down_text_color_R_scale: Scale widget for adjusting the red
+        component of the bottom text color.
+    :type down_text_color_R_scale: tk.Scale
+
+    :ivar down_text_color_G_scale: Scale widget for adjusting the green
+        component of the bottom text color.
+    :type down_text_color_G_scale: tk.Scale
+
+    :ivar down_text_color_B_scale: Scale widget for adjusting the blue
+        component of the bottom text color.
+    :type down_text_color_B_scale: tk.Scale
+
+    :ivar zero_spec_box: Canvas widget displaying the minimum hue spectrum.
+    :type zero_spec_box: tk.Canvas
+
+    :ivar zero_spec_scale: Scale widget for adjusting the minimum hue
+        spectrum.
+    :type zero_spec_scale: tk.Scale
+
+    :ivar max_spec_box: Canvas widget displaying the maximum hue spectrum.
+    :type max_spec_box: tk.Canvas
+
+    :ivar max_spec_scale: Scale widget for adjusting the maximum hue
+        spectrum.
+    :type max_spec_scale: tk.Scale
+
+    :ivar change_num_entry: Entry widget for adjusting the number of
+        changes to be applied.
+    :type change_num_entry: ttk.Entry
+
+    :ivar start_button: Button widget to start the variation process.
+    :type start_button: ttk.Button
+
+    :ivar progress: Progress bar widget to visualize the progress of
+        an ongoing operation.
+    :type progress: ttk.Progressbar
+
+    :ivar label: Label widget displaying context-specific messages
+        or instructions.
+    :type label: ttk.Label
+    """
     def __init__(self, parent, config):
         self.parent = parent
         self.config = config

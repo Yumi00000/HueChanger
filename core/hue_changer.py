@@ -4,6 +4,33 @@ from threading import Thread
 
 
 class HueChanger(Thread):
+    """
+    Handles hue shifting and optional text addition for image variants.
+
+    This class extends Thread and processes an image by creating variants with
+    different hue shifts. It allows injection of dependencies such as a text adder
+    for adding text overlays and a file namer for generating output file names.
+    It manages the progress of its task via callbacks and supports configuration
+    options for hue shifting and optional text addition. The primary goal of this
+    class is to automate the generation of image variants with specified attributes.
+
+    :ivar image_path: Path to the input image file to process.
+    :type image_path: str
+    :ivar output_folder: Directory path where the processed images will be saved.
+    :type output_folder: str
+    :ivar progress_callback: A function called with the progress index during processing.
+    :type progress_callback: Callable[[int], None]
+    :ivar done_callback: A function called when processing is complete.
+    :type done_callback: Callable[[], None]
+    :ivar config: Configuration object specifying processing parameters
+                  such as hue shift bounds and slogans.
+    :type config: Any
+    :ivar file_namer: Object or utility used to generate output file names.
+    :type file_namer: Any
+    :ivar text_adder: Optional dependency to add text to images, can be injected
+                      through a method call.
+    :type text_adder: Any
+    """
     def __init__(self, image_path, output_folder, progress_callback, done_callback, config, file_namer):
         super().__init__()
         self.image_path = image_path

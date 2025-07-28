@@ -13,6 +13,28 @@ from config.settings import ConfigFactory
 
 
 class App(tk.Tk):
+    """
+    Main application class for managing the hue changer application.
+
+    This class encapsulates the main functionality and UI management of the hue changer
+    application. It handles user inputs, configurations, and interactions with other
+    components such as WidgetManager, HueChanger, and FileNamer.
+
+    :ivar config: Configuration settings for the application.
+    :type config: Config
+    :ivar file_namer: Instance of FileNamer for managing file naming logic.
+    :type file_namer: FileNamer
+    :ivar image_path: Path to the selected image, None if no image is selected.
+    :type image_path: Optional[str]
+    :ivar folder_path: Path to the selected folder, None if no folder is selected.
+    :type folder_path: Optional[str]
+    :ivar ok_clicked: Boolean flag indicating whether the "OK" button has been clicked.
+    :type ok_clicked: bool
+    :ivar hue_changer: Reference to the HueChanger thread that applies hue variations.
+    :type hue_changer: Optional[HueChanger]
+    :ivar widget_manager: Manages the creation and interaction of UI widgets.
+    :type widget_manager: WidgetManager
+    """
     def __init__(self, config):
         super().__init__()
         self.config = config

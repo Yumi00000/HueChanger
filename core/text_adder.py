@@ -4,6 +4,18 @@ import logging
 logger = logging.getLogger(__name__)
 
 class TextAdder:
+    """
+    Handles adding text to an image, ensuring proper font loading, color validation, and text positioning.
+
+    Provides mechanisms for adding slogans to the top portion of an image with a visually appealing
+    background and proper contrast between text and background colors. The class handles font management,
+    validates text and background colors, and ensures compatibility with different image modes.
+
+    :ivar config: Configuration object that holds paths for fonts, colors, and other necessary settings.
+    :type config: object
+    :ivar font: Loaded font object used for rendering text on the image.
+    :type font: ImageFont.FreeTypeFont or PIL.ImageFont.ImageFont
+    """
     def __init__(self, config):
         self.config = config
         self.font = self._load_font()
